@@ -1,0 +1,639 @@
+
+.content .underline {
+  position: relative;
+  width: 160px;
+  height: 5px;
+  background: white;
+  margin-top: 20px;
+}
+
+.letter {
+font-variant-caps: all-small-caps;
+  font-weight: 400;
+}
+
+
+a {
+  color: #FF6B6B;
+}
+a:hover {
+  color: #ff9a9a;
+  text-decoration: none;
+}
+
+.example-header {
+  background: #3D4351;
+  color: #FFF;
+  font-weight: 300;
+  padding: 3em 1em;
+  text-align: center;
+}
+.example-header h1 {
+  color: #FFF;
+  font-weight: 300;
+  margin-bottom: 20px;
+}
+.example-header p {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-weight: 700;
+}
+
+.container-fluid .row {
+  padding: 0 0 4em 0;
+}
+.container-fluid .row:nth-child(even) {
+  background: #F1F4F5;
+}
+
+.future {
+  box-shadow: 0 0 15px rgba(0,0,0,0.3);
+  background-image: url('../img/bg-pattern.png') !important;
+  padding-bottom: 0 !important;
+}
+
+.example-title {
+  text-align: center;
+  margin-bottom: 60px;
+  padding: 3em 0;
+  border-bottom: 1px solid #E4EAEC;
+}
+.example-title p {
+  margin: 0 auto;
+  font-size: 16px;
+  max-width: 400px;
+}
+
+/*==================================
+    TIMELINE
+==================================*/
+/*-- GENERAL STYLES
+------------------------------*/
+.timeline {
+  line-height: 1.4em;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+.timeline h1, .timeline h2, .timeline h3, .timeline h4, .timeline h5, .timeline h6 {
+  line-height: inherit;
+}
+
+/*----- TIMELINE ITEM -----*/
+.timeline-item {
+  padding-left: 40px;
+  position: relative;
+}
+.timeline-item:last-child {
+  padding-bottom: 0;
+}
+
+/*----- TIMELINE INFO -----*/
+.timeline-info {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  margin: 0 0 .5em 0;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+/*----- TIMELINE MARKER -----*/
+.timeline-marker {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 15px;
+}
+.timeline-marker:before {
+  background: #FF6B6B;
+  border: 3px solid transparent;
+  border-radius: 100%;
+  content: "";
+  display: block;
+  height: 15px;
+  position: absolute;
+  top: 4px;
+  left: 0;
+  width: 15px;
+  transition: background 0.3s ease-in-out, border 0.3s ease-in-out;
+}
+.timeline-marker:after {
+  content: "";
+  width: 3px;
+  background: #CCD5DB;
+  display: block;
+  position: absolute;
+  top: 24px;
+  bottom: 0;
+  left: 6px;
+}
+.timeline-item:last-child .timeline-marker:after {
+  content: none;
+}
+
+.timeline-item:not(.period):hover .timeline-marker:before {
+  background: transparent;
+  border: 3px solid #FF6B6B;
+}
+
+/*----- TIMELINE CONTENT -----*/
+.timeline-content {
+  padding-bottom: 40px;
+}
+.timeline-content p:last-child {
+  margin-bottom: 0;
+}
+
+/*----- TIMELINE PERIOD -----*/
+.period {
+  padding: 0;
+}
+.period .timeline-info {
+  display: none;
+}
+.period .timeline-marker:before {
+  background: transparent;
+  content: "";
+  width: 15px;
+  height: auto;
+  border: none;
+  border-radius: 0;
+  top: 0;
+  bottom: 30px;
+  position: absolute;
+  border-top: 3px solid #CCD5DB;
+  border-bottom: 3px solid #CCD5DB;
+}
+.period .timeline-marker:after {
+  content: "";
+  height: 32px;
+  top: auto;
+}
+.period .timeline-content {
+  padding: 40px 0 70px;
+}
+.period .timeline-title {
+  margin: 0;
+}
+
+/*----------------------------------------------
+    MOD: TIMELINE SPLIT
+----------------------------------------------*/
+@media (min-width: 768px) {
+  .timeline-split .timeline, .timeline-centered .timeline {
+    display: table;
+  }
+  .timeline-split .timeline-item, .timeline-centered .timeline-item {
+    display: table-row;
+    padding: 0;
+  }
+  .timeline-split .timeline-info, .timeline-centered .timeline-info,
+  .timeline-split .timeline-marker,
+  .timeline-centered .timeline-marker,
+  .timeline-split .timeline-content,
+  .timeline-centered .timeline-content,
+  .timeline-split .period .timeline-info,
+  .timeline-centered .period .timeline-info {
+    display: table-cell;
+    vertical-align: top;
+  }
+  .timeline-split .timeline-marker, .timeline-centered .timeline-marker {
+    position: relative;
+  }
+  .timeline-split .timeline-content, .timeline-centered .timeline-content {
+    padding-left: 30px;
+  }
+  .timeline-split .timeline-info, .timeline-centered .timeline-info {
+    padding-right: 30px;
+  }
+  .timeline-split .period .timeline-title, .timeline-centered .period .timeline-title {
+    position: relative;
+    left: -45px;
+  }
+}
+
+/*----------------------------------------------
+    MOD: TIMELINE CENTERED
+----------------------------------------------*/
+@media (min-width: 992px) {
+  .timeline-centered,
+  .timeline-centered .timeline-item,
+  .timeline-centered .timeline-info,
+  .timeline-centered .timeline-marker,
+  .timeline-centered .timeline-content {
+    display: block;
+    margin: 0;
+    padding: 0;
+  }
+  .timeline-centered .timeline-item {
+    padding-bottom: 40px;
+    overflow: hidden;
+  }
+  .timeline-centered .timeline-marker {
+    position: absolute;
+    left: 50%;
+    margin-left: -7.5px;
+  }
+  .timeline-centered .timeline-info,
+  .timeline-centered .timeline-content {
+    width: 50%;
+  }
+  .timeline-centered > .timeline-item:nth-child(odd) .timeline-info {
+    float: left;
+    text-align: right;
+    padding-right: 30px;
+  }
+  .timeline-centered > .timeline-item:nth-child(odd) .timeline-content {
+    float: right;
+    text-align: left;
+    padding-left: 30px;
+  }
+  .timeline-centered > .timeline-item:nth-child(even) .timeline-info {
+    float: right;
+    text-align: left;
+    padding-left: 30px;
+  }
+  .timeline-centered > .timeline-item:nth-child(even) .timeline-content {
+    float: left;
+    text-align: right;
+    padding-right: 30px;
+  }
+  .timeline-centered > .timeline-item.period .timeline-content {
+    float: none;
+    padding: 0;
+    width: 100%;
+    text-align: center;
+  }
+  .timeline-centered .timeline-item.period {
+    padding: 50px 0 90px;
+  }
+  .timeline-centered .period .timeline-marker:after {
+    height: 30px;
+    bottom: 0;
+    top: auto;
+  }
+  .timeline-centered .period .timeline-title {
+    left: auto;
+  }
+}
+
+/*----------------------------------------------
+    MOD: MARKER OUTLINE
+----------------------------------------------*/
+.marker-outline .timeline-marker:before {
+  background: transparent;
+  border-color: #FF6B6B;
+}
+.marker-outline .timeline-item:hover .timeline-marker:before {
+  background: #FF6B6B;
+}
+
+/*common styles !!!YOU DON'T NEED THEM */
+.container h1 {
+  font-weight: 900;
+  font-size: 30px;
+  text-transform: uppercase;
+  color: #212121;
+  letter-spacing: 0px;
+}
+.container h1 span {
+  display: inline-block;
+}
+.container h1 span:before, .container h1 span:after {
+  content: "";
+  display: block;
+  width: 34px;
+  height: 2px;
+  background-color: #212121;
+  margin: 0px 0px 0px 2px;
+}
+.effect h2 {
+  color: #fff;
+  font-family: 'Playfair Display', serif;
+  font-weight: 400;
+  font-size: 25px;
+  letter-spacing: 3px;
+}
+.effect:nth-child(2) {
+  margin-top: 25px;
+}
+.effect:nth-child(2n+1) {
+  background-color: #fff;
+}
+.effect:nth-child(2n+1) h2 {
+  color: #212121;
+}
+.effect .buttons {
+  display: flex;
+  justify-content: center;
+}
+.effect a:last-child {
+  margin-right: 0px;
+}
+
+/*common link styles !!!YOU NEED THEM*/
+.effect {
+  /*display: flex; !!!uncomment this line !!!*/
+}
+.effect a {
+  text-decoration: none !important;
+  color: #fff;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  margin-right: 20px;
+  font-size: 25px;
+  overflow: hidden;
+  position: relative;
+}
+.effect a i {
+  position: relative;
+  z-index: 3;
+}
+.effect a.fb {
+  background-color: #3b5998;
+}
+.effect a.tw {
+  background-color: #00aced;
+}
+.effect a.g-plus {
+  background-color: #dd4b39;
+}
+.effect a.dribbble {
+  background-color: #ea4c89;
+}
+.effect a.pinterest {
+  background-color: #cb2027;
+}
+.effect a.insta {
+  background-color: #0565ff;
+}
+.effect a.vk {
+  background-color: #4976a8;
+}
+.effect a.vimeo {
+  background-color: #1ab7ea;
+}
+.effect a.wc {
+  background-color: #7bb32f;
+}
+/* aeneas effect */
+.effect.aeneas a {
+  transition: border-top-left-radius 0.1s linear 0s, border-top-right-radius 0.1s linear 0.1s, border-bottom-right-radius 0.1s linear 0.2s, border-bottom-left-radius 0.1s linear 0.3s, -webkit-transform 0.4s linear 0s;
+  transition: transform 0.4s linear 0s, border-top-left-radius 0.1s linear 0s, border-top-right-radius 0.1s linear 0.1s, border-bottom-right-radius 0.1s linear 0.2s, border-bottom-left-radius 0.1s linear 0.3s;
+  transition: transform 0.4s linear 0s, border-top-left-radius 0.1s linear 0s, border-top-right-radius 0.1s linear 0.1s, border-bottom-right-radius 0.1s linear 0.2s, border-bottom-left-radius 0.1s linear 0.3s, -webkit-transform 0.4s linear 0s;
+}
+.effect.aeneas a i {
+  transition: -webkit-transform 0.4s linear 0s;
+  transition: transform 0.4s linear 0s;
+  transition: transform 0.4s linear 0s, -webkit-transform 0.4s linear 0s;
+}
+.effect.aeneas a:hover {
+  -webkit-transform: rotate(360deg);
+          transform: rotate(360deg);
+  border-radius: 50%;
+}
+.effect.aeneas a:hover i {
+  -webkit-transform: rotate(-360deg);
+          transform: rotate(-360deg);
+}
+
+/* jaques effect */
+.effect.jaques a {
+  transition: border-top-left-radius 0.1s linear 0s, border-top-right-radius 0.1s linear 0.1s, border-bottom-right-radius 0.1s linear 0.2s, border-bottom-left-radius 0.1s linear 0.3s;
+}
+.effect.jaques a:hover {
+  border-radius: 50%;
+}
+
+/* egeon effect */
+.effect.egeon a {
+  transition: border-radius 0.2s linear 0.2s, -webkit-transform 0.2s linear 0s;
+  transition: transform 0.2s linear 0s, border-radius 0.2s linear 0.2s;
+  transition: transform 0.2s linear 0s, border-radius 0.2s linear 0.2s, -webkit-transform 0.2s linear 0s;
+}
+.effect.egeon a i {
+  transition: -webkit-transform 0.2s linear 0s;
+  transition: transform 0.2s linear 0s;
+  transition: transform 0.2s linear 0s, -webkit-transform 0.2s linear 0s;
+}
+.effect.egeon a:hover {
+  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+  border-top-left-radius: 50%;
+  border-top-right-radius: 50%;
+  border-bottom-left-radius: 50%;
+}
+.effect.egeon a:hover i {
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+}
+
+/* claudio effect */
+.effect.claudio a {
+  transition: border-radius 0.2s linear 0s, -webkit-transform 0.2s linear 0s;
+  transition: transform 0.2s linear 0s, border-radius 0.2s linear 0s;
+  transition: transform 0.2s linear 0s, border-radius 0.2s linear 0s, -webkit-transform 0.2s linear 0s;
+}
+.effect.claudio a:hover {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+  border-bottom-left-radius: 50%;
+  border-top-right-radius: 50%;
+}
+
+/* laertes effect */
+.effect.laertes a {
+  transition: all 0.2s linear 0s;
+}
+.effect.laertes a i {
+  transition: all 0.2s linear 0s;
+}
+.effect.laertes a:hover {
+  border-radius: 50%/20%;
+}
+.effect.laertes a:hover i {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  text-shadow: 0 0 12px rgba(33, 33, 33, 0.6);
+}
+
+#return-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: rgba(123, 67, 151, .7);
+    background: -webkit-linear-gradient(to left,rgba(123, 67, 151, .7),rgba(174, 54, 99, .7));
+    background: linear-gradient(to left,rgba(123, 67, 151, .7),rgba(174, 54, 99, .7));
+    width: 50px;
+    height: 50px;
+    display: block;
+    text-decoration: none;
+    -webkit-border-radius: 35px;
+    -moz-border-radius: 35px;
+    border-radius: 35px;
+    display: none;
+    -webkit-transition: all 0.3s linear;
+    -moz-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    z-index: 100;
+}
+#return-to-top i {
+    color: #fff;
+    margin: 0;
+    position: relative;
+    left: 16px;
+    top: 13px;
+    font-size: 19px;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+#return-to-top:hover {
+    background: rgba(123, 67, 151, 1);
+    background: -webkit-linear-gradient(to left,rgba(123, 67, 151, .7),rgba(174, 54, 99, 1));
+    background: linear-gradient(to left,rgba(123, 67, 151, 1),rgba(174, 54, 99, 1));
+}
+#return-to-top:hover i {
+    color: #fff;
+    top: 5px;
+}
+
+section.cta {
+  padding: 50px 0 !important;
+}
+
+.t490__img {
+    margin: 40px 0;
+    width: 100px;
+    height: auto;
+    max-width: 100%;
+}
+
+.share {
+    margin-top: 55px;
+  margin-bottom: 66px;
+}
+
+.wow { visibility: hidden; }
+
+.how {
+  text-align: center;
+}
+
+.how > h2 {
+  text-align: center;
+}
+
+#contact {
+  padding: 50px 0 0;
+}
+
+footer {
+  background: #fdc539 !important;
+}
+
+footer > .container {
+  color: grey;
+}
+
+section.features .section-heading {
+    margin-bottom: 0px;
+
+}
+
+.badge-link>img {
+  height: 50px !important;
+}
+
+.device-mockup.iphone6_plus.portrait.white>.device, .device-mockup.iphone6_plus.white>.device {
+    background-image: url("../img/4.png");
+}
+
+.device-mockup.iphone6_plus.portrait>.device>.screen, .device-mockup.iphone6_plus>.device>.screen {
+    top: 11.58%;
+    bottom: 0;
+    left: 15.2%;
+    right: 44.97%;
+}
+
+.device-mockup.iphone6_plus, .device-mockup.iphone6_plus.portrait {
+    padding-bottom: 108.76%;
+}
+
+.parent{
+  display: flex;
+  height: 0;
+}
+
+.gear{
+  position: relative;
+  width: 200px;
+  height: 200px;
+  margin: auto;
+  background: rgb(255, 208, 99);
+  border-radius: 50%;
+  animation-name: spin;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+.gear .center{
+  position: absolute;
+  top: 50px;
+  left: 50px;
+  z-index: 10;
+  width: 100px;
+  height: 100px;
+  background: #fdc946;
+  border-radius: 50%;
+}
+
+.tooth{
+  position: absolute;
+  top: -25px;
+  left: 75px;
+  z-index: 1;
+  width: 45px;
+  height: 250px;
+  background:rgb(255, 208, 99);
+}
+
+.tooth:nth-child(2){
+  transform: rotate(45deg);
+}
+
+.tooth:nth-child(3){
+  transform: rotate(90deg);
+}
+
+.tooth:nth-child(4){
+  transform: rotate(135deg);
+}
+
+@keyframes spin {
+  from {transform: rotate(0deg); }
+  to {transform: rotate(360deg);}
+}
+
+section.download {
+    position: relative;
+    padding: 6rem 0px 0px 0 !important;
+}
+
+.h3-about {
+  z-index: 1000;
+    position: absolute
+}
