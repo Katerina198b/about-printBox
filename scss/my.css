@@ -637,3 +637,18 @@ section.download {
   z-index: 1000;
     position: absolute
 }
+
+#logo {
+  font-family: 'Lobster';
+  text-decoration: none;
+  text-transform: none;
+  letter-spacing: 0;
+  font-size: 60px;
+  color: white;
+}
+
+#mainNav .navbar-brand {
+    font-family: 'Lobster' !important;
+      letter-spacing: 0;
+
+}
