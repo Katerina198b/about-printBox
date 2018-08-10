@@ -76,9 +76,6 @@ a:hover {
   padding: 0;
   width: 100%;
 }
-.timeline h1, .timeline h2, .timeline h3, .timeline h4, .timeline h5, .timeline h6 {
-  line-height: inherit;
-}
 
 /*----- TIMELINE ITEM -----*/
 .timeline-item {
