@@ -1,0 +1,13 @@
+{
+  "head": {
+    "description": "",
+    "title": ""
+  },
+  "nav": {
+    "navbar-toggler": "menu",
+    "about": "about",
+    "technology": "technology",
+    "road": "Road Map",
+
+  }
+}
