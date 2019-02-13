@@ -546,15 +546,10 @@ section.cta {
 
 .t490__img {
     margin: 40px 0;
-    width: 100px;
-    height: auto;
+    height: 100px;
     max-width: 100%;
 }
 
-.share {
-    margin-top: 55px;
-  margin-bottom: 66px;
-}
 
 .wow { visibility: hidden; }
 
